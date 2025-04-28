@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sit737-2025-prac6p-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sit737-2025-prac6p
+  template:
+    metadata:
+      labels:
+        app: sit737-2025-prac6p
+    spec:
+      containers:
+      - name: sit737-2025-prac6p
+        image: s223182277/sit737-2025-prac6p:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
